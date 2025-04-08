@@ -23,6 +23,14 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         max-width: 600px;
         width: 90%;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+      }
+
+      .header {
+        flex-shrink: 0;
+        margin-bottom: 1.5rem;
       }
 
       .status {
@@ -36,11 +44,17 @@
         font-size: 1.5rem;
         color: #7f8c8d;
         text-align: center;
-        margin-bottom: 1.5rem;
+      }
+
+      .log-container {
+        flex: 1;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
       }
 
       #log {
-        max-height: 300px;
+        max-height: 100%;
         overflow-y: auto;
         padding: 0;
         margin: 0;
@@ -99,11 +113,13 @@
   </head>
   <body>
     <div class="container">
-      <div class="status">Staying Active...</div>
-      <div class="timer">
-        Time elapsed: <span id="elapsedTime">0</span> seconds
+      <div class="header">
+        <div class="status">Staying Active...</div>
+        <div class="timer">
+          Time elapsed: <span id="elapsedTime">0</span> seconds
+        </div>
       </div>
-      <div>
+      <div class="log-container">
         <ol id="log"></ol>
       </div>
     </div>
